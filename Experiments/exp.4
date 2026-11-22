@@ -1,0 +1,90 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RailConnect - Train Reservation</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h2>🚆 RailConnect</h2>
+    <nav>
+      <a href="#home">Home</a>
+      <a href="#search">Find Trains</a>
+      <a href="#pnr">PNR Status</a>
+      <a href="#cancel">Cancel Ticket</a>
+      <a href="#login">Login</a>
+    </nav>
+  </header>
+
+  <section class="hero" id="home">
+    <h1>Online Train Reservation System</h1>
+    <p>Search trains, check availability and manage your journey.</p>
+
+    <form id="searchForm">
+      <input id="from" placeholder="Origin station" required>
+      <input id="to" placeholder="Destination station" required>
+      <input id="date" type="date" required>
+      <select id="classType" required>
+        <option value="Sleeper">Sleeper</option>
+        <option value="3AC">AC 3 Tier</option>
+        <option value="2AC">AC 2 Tier</option>
+        <option value="1AC">AC First Class</option>
+      </select>
+      <button type="submit">Search Trains</button>
+    </form>
+  </section>
+
+  <main id="search">
+    <h2>Available Trains</h2>
+    <div id="results">Enter your journey details to search.</div>
+  </main>
+
+  <section class="panel" id="booking">
+    <h2>Passenger Reservation</h2>
+    <form id="bookingForm">
+      <input id="trainId" type="hidden">
+      <input id="passengerName" placeholder="Passenger full name" required>
+      <input id="age" type="number" min="1" max="120"
+        placeholder="Passenger age" required>
+      <input id="passengerEmail" type="email"
+        placeholder="Email address" required>
+      <button type="submit">Reserve Ticket</button>
+    </form>
+    <p id="bookingMessage"></p>
+  </section>
+
+  <section class="panel" id="pnr">
+    <h2>Check PNR Status</h2>
+    <form id="pnrForm">
+      <input id="pnrInput" placeholder="Enter your PNR number" required>
+      <button type="submit">Check Status</button>
+    </form>
+    <div id="pnrResult"></div>
+  </section>
+
+  <section class="panel" id="cancel">
+    <h2>Cancel Reservation</h2>
+    <form id="cancelForm">
+      <input id="cancelPnr" placeholder="Enter PNR number" required>
+      <button type="submit">Request Cancellation</button>
+    </form>
+    <div id="cancelResult"></div>
+  </section>
+
+  <section class="panel" id="login">
+    <h2>Passenger Account</h2>
+    <p>Registration, secure login and personal booking history
+      will be connected to the backend in the next stage.</p>
+  </section>
+
+  <footer>
+    <p>RailConnect | Train Reservation Project Demo</p>
+    <p>Sample train data only — not an official railway booking service.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
