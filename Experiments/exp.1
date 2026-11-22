@@ -1,0 +1,55 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<title>Library Management</title>
+<style>
+body {font-family:Arial;text-align:center;background:#eaf2f8}
+h1 {background:#263b50;color:white;padding:20px}
+input,button {padding:10px;margin:8px}
+button {background:blue;color:white}
+</style>
+</head>
+<body>
+
+<h1>Library Management System</h1>
+
+<h2>Student Login</h2>
+<input id="user" placeholder="Username">
+<input id="pass" type="password" placeholder="Password">
+<button onclick="alert('Login Successful')">Login</button>
+
+<h2>Search Books</h2>
+<input id="search" placeholder="Enter book name">
+<button onclick="findBook()">Search</button>
+<p id="result"></p>
+
+<h2>Admin - Add Book</h2>
+<input id="book" placeholder="Book Name">
+<button onclick="addBook()">Add Book</button>
+
+<h2>Contact Us</h2>
+<input placeholder="Email">
+<input placeholder="Message">
+<button onclick="alert('Message Submitted')">Submit</button>
+
+<script>
+let books = ["HTML", "Java", "Python"];
+
+function findBook() {
+let name = document.getElementById("search").value;
+document.getElementById("result").innerHTML =
+books.filter(b => b.toLowerCase().includes(name.toLowerCase())).join("<br>") || "Book Not Found";
+}
+
+function addBook() {
+let name = document.getElementById("book").value;
+if(name) {
+books.push(name);
+alert("Book Added Successfully");
+}
+}
+</script>
+
+</body>
+</html>
