@@ -1,0 +1,66 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<title>Bus Ticket Booking</title>
+<style>
+body{text-align:center;font-family:Arial;background:#eaf2f8}
+h1{background:navy;color:white;padding:20px}
+.box{background:white;padding:15px;margin:15px}
+input,button{padding:10px;margin:5px}
+button{background:navy;color:white}
+</style>
+</head>
+<body>
+
+<h1>Online Bus Ticket Booking</h1>
+
+<div class="box">
+<h2>User Login</h2>
+<input id="user" placeholder="Username">
+<input id="pass" type="password" placeholder="Password">
+<button onclick="alert('Login Successful')">Login</button>
+</div>
+
+<div class="box">
+<h2>Search Bus</h2>
+<input id="from" placeholder="From">
+<input id="to" placeholder="To">
+<input type="date" id="date">
+<button onclick="searchBus()">Search</button>
+<p id="result"></p>
+</div>
+
+<div class="box">
+<h2>Available Buses</h2>
+<p>Chennai to Bangalore - ₹500</p>
+<p>Chennai to Coimbatore - ₹400</p>
+<h3>Select Seat</h3>
+<input id="seat" placeholder="Seat Number">
+<input id="name" placeholder="Passenger Name">
+<button onclick="book()">Book Ticket</button>
+<p id="ticket"></p>
+</div>
+
+<div class="box">
+<h2>Admin Panel</h2>
+<input id="bus" placeholder="Bus Name">
+<button onclick="addBus()">Add Bus</button>
+<p id="admin"></p>
+</div>
+
+<script>
+function searchBus(){
+result.innerHTML="Searching buses from "+from.value+" to "+to.value;
+}
+function book(){
+ticket.innerHTML="Ticket booked for "+name.value+
+" | Seat: "+seat.value;
+}
+function addBus(){
+admin.innerHTML=bus.value+" added successfully!";
+}
+</script>
+
+</body>
+</html>
