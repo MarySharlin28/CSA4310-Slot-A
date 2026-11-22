@@ -1,0 +1,80 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<title>TechSavvy Shopping</title>
+<style>
+body {
+  font-family: Arial;
+  background: linear-gradient(120deg,#240046,#9d4edd);
+  color: white;
+  text-align: center;
+}
+h1 { color: #ffd166; }
+.products {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+.card {
+  background: white;
+  color: #333;
+  padding: 20px;
+  width: 180px;
+  border-radius: 15px;
+  box-shadow: 0 5px 15px #222;
+}
+button {
+  background: #ff8500;
+  color: white;
+  border: none;
+  padding: 10px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+</style>
+</head>
+<body>
+
+<h1>TechSavvy Online Shopping</h1>
+<h3>Latest Gadgets at Best Prices</h3>
+
+<div class="products">
+  <div class="card">
+    <h2>📱 Smartphone</h2>
+    <p>Price: ₹15,000</p>
+    <button onclick="add('Smartphone',15000)">Add to Cart</button>
+  </div>
+
+  <div class="card">
+    <h2>💻 Laptop</h2>
+    <p>Price: ₹45,000</p>
+    <button onclick="add('Laptop',45000)">Add to Cart</button>
+  </div>
+
+  <div class="card">
+    <h2>🎧 Headphones</h2>
+    <p>Price: ₹2,000</p>
+    <button onclick="add('Headphones',2000)">Add to Cart</button>
+  </div>
+</div>
+
+<h2>🛒 Shopping Cart</h2>
+<p id="cart">Cart is empty</p>
+<h3 id="total">Total: ₹0</h3>
+
+<script>
+let total = 0;
+let items = [];
+
+function add(name, price) {
+  items.push(name);
+  total += price;
+  document.getElementById("cart").innerHTML = items.join(", ");
+  document.getElementById("total").innerHTML = "Total: ₹" + total;
+}
+</script>
+
+</body>
+</html>
