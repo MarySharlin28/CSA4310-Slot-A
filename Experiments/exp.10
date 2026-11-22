@@ -1,0 +1,79 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<title>StyleHub Fashion</title>
+<style>
+body {
+  font-family: Arial;
+  background: linear-gradient(135deg,#ff758c,#ffb199);
+  text-align: center;
+  color: #4a1830;
+}
+h1 { color: white; }
+.products {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+.card {
+  background: #fff0f3;
+  padding: 20px;
+  width: 170px;
+  border-radius: 15px;
+  box-shadow: 0 4px 10px #a44;
+}
+button {
+  background: #c9184a;
+  color: white;
+  padding: 10px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+</style>
+</head>
+<body>
+
+<h1>STYLEHUB 👗</h1>
+<h3>Discover Your Fashion Style!</h3>
+
+<div class="products">
+  <div class="card">
+    <h2>👕 T-Shirt</h2>
+    <p>Price: ₹500</p>
+    <button onclick="add('T-Shirt',500)">Add to Cart</button>
+  </div>
+
+  <div class="card">
+    <h2>👗 Dress</h2>
+    <p>Price: ₹1200</p>
+    <button onclick="add('Dress',1200)">Add to Cart</button>
+  </div>
+
+  <div class="card">
+    <h2>👟 Shoes</h2>
+    <p>Price: ₹1500</p>
+    <button onclick="add('Shoes',1500)">Add to Cart</button>
+  </div>
+</div>
+
+<h2>🛒 Shopping Cart</h2>
+<p id="cart">Cart is empty</p>
+<h3 id="total">Total: ₹0</h3>
+
+<script>
+let total = 0;
+let items = [];
+
+function add(name, price) {
+  items.push(name);
+  total += price;
+  document.getElementById("cart").innerHTML = items.join(", ");
+  document.getElementById("total").innerHTML = "Total: ₹" + total;
+}
+</script>
+
+</body>
+</html>
