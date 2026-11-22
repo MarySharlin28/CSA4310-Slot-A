@@ -1,0 +1,61 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<title>Hotel Booking</title>
+<style>
+body{text-align:center;font-family:Arial;background:#eaf2f8}
+h1{background:navy;color:white;padding:20px}
+.box{background:white;padding:20px;margin:20px}
+input,button{padding:10px;margin:5px}
+button{background:navy;color:white}
+</style>
+</head>
+<body>
+
+<h1>Hotel Room Booking</h1>
+
+<div class="box">
+<h2>Login</h2>
+<input id="user" placeholder="Username">
+<input id="pass" type="password" placeholder="Password">
+<button onclick="alert('Login Successful')">Login</button>
+</div>
+
+<div class="box">
+<h2>Search Hotel</h2>
+<input id="place" placeholder="Destination">
+<input type="date" id="date">
+<button onclick="search()">Search</button>
+<p id="result"></p>
+</div>
+
+<div class="box">
+<h2>Available Rooms</h2>
+<p>Luxury Room - ₹2000</p>
+<p>Deluxe Room - ₹3000</p>
+<button onclick="book()">Book Now</button>
+<p id="msg"></p>
+</div>
+
+<div class="box">
+<h2>Admin</h2>
+<input id="hotel" placeholder="Hotel Name">
+<button onclick="add()">Add Hotel</button>
+<p id="admin"></p>
+</div>
+
+<script>
+function search(){
+result.innerHTML="Hotels available in "+place.value;
+}
+function book(){
+msg.innerHTML="Booking Successful!";
+}
+function add(){
+admin.innerHTML=hotel.value+" Added Successfully!";
+}
+</script>
+
+</body>
+</html>
