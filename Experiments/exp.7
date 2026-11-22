@@ -1,0 +1,107 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<title>Beauty Parlour Booking</title>
+<style>
+body{
+font-family:Arial;
+text-align:center;
+background:linear-gradient(120deg,#fce4ec,#e1bee7);
+margin:0;
+}
+h1{
+background:#8e2454;
+color:white;
+padding:20px;
+}
+.box{
+background:white;
+padding:20px;
+margin:20px auto;
+width:80%;
+max-width:500px;
+border-radius:15px;
+box-shadow:0 3px 10px #aaa;
+}
+input,select,button{
+padding:10px;
+margin:8px;
+border-radius:6px;
+border:1px solid #ccc;
+}
+button{
+background:#8e2454;
+color:white;
+cursor:pointer;
+}
+button:hover{background:#d63384}
+</style>
+</head>
+<body>
+
+<h1>💇 Beauty Parlour Appointment</h1>
+
+<div class="box">
+<h2>User Login</h2>
+<input id="user" placeholder="Username">
+<input id="pass" type="password" placeholder="Password">
+<button onclick="alert('Login Successful')">Login</button>
+</div>
+
+<div class="box">
+<h2>Our Services</h2>
+<select id="service">
+<option>Hair Cutting</option>
+<option>Facial</option>
+<option>Hair Coloring</option>
+<option>Bridal Makeup</option>
+<option>Manicure</option>
+</select>
+
+<select id="stylist">
+<option>Stylist A</option>
+<option>Stylist B</option>
+<option>Stylist C</option>
+</select>
+
+<input type="date" id="date">
+<input type="time" id="time">
+<input id="name" placeholder="Customer Name">
+
+<button onclick="book()">Book Appointment</button>
+<p id="result"></p>
+</div>
+
+<div class="box">
+<h2>Admin Panel</h2>
+<input id="newservice" placeholder="Add New Service">
+<button onclick="add()">Add Service</button>
+<p id="admin"></p>
+</div>
+
+<script>
+function book(){
+let name=document.getElementById("name").value;
+let service=document.getElementById("service").value;
+let date=document.getElementById("date").value;
+let time=document.getElementById("time").value;
+
+if(name && date && time){
+document.getElementById("result").innerHTML=
+"Appointment Booked!<br>"+name+"<br>"+service+
+"<br>"+date+" at "+time;
+}else{
+alert("Please fill all details");
+}
+}
+
+function add(){
+let s=document.getElementById("newservice").value;
+document.getElementById("admin").innerHTML=
+s+" added successfully!";
+}
+</script>
+
+</body>
+</html>
