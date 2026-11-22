@@ -1,0 +1,80 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<title>InsureEasy</title>
+<style>
+body {
+  font-family: Arial;
+  text-align: center;
+  background: linear-gradient(135deg,#141e30,#f7971e);
+  color: white;
+}
+h1 { color: #ffe66d; }
+.card {
+  background: #fff8e7;
+  color: #333;
+  width: 280px;
+  padding: 20px;
+  margin: 20px auto;
+  border-radius: 15px;
+}
+input, select {
+  padding: 10px;
+  margin: 8px;
+  width: 85%;
+}
+button {
+  background: #e76f00;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+</style>
+</head>
+<body>
+
+<h1>🛡️ INSUREEASY</h1>
+<h3>Your Insurance, Made Easy!</h3>
+
+<div class="card">
+  <h2>Insurance Registration</h2>
+  <input id="name" placeholder="Customer Name">
+  <select id="policy">
+    <option>Health Insurance</option>
+    <option>Vehicle Insurance</option>
+    <option>Home Insurance</option>
+  </select>
+  <input id="due" type="date">
+  <button onclick="register()">Register Policy</button>
+  <p id="result"></p>
+</div>
+
+<div class="card">
+  <h2>Policy Reminder</h2>
+  <p>Receive alerts before premium due dates.</p>
+  <button onclick="alert('Premium payment reminder sent!')">
+    Send SMS Reminder
+  </button>
+</div>
+
+<script>
+function register() {
+  let name = document.getElementById("name").value;
+  let policy = document.getElementById("policy").value;
+  let due = document.getElementById("due").value;
+
+  if(name && due) {
+    document.getElementById("result").innerHTML =
+      "Welcome " + name + "!<br>" +
+      policy + "<br>Due Date: " + due;
+  } else {
+    alert("Please fill all details!");
+  }
+}
+</script>
+
+</body>
+</html>
