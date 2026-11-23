@@ -1,0 +1,68 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<title>JobConnect</title>
+<style>
+body{margin:0;font-family:Arial;background:#dff5ef;text-align:center}
+header{background:#123c40;color:white;padding:25px}
+.card{background:white;padding:18px;margin:15px auto;width:80%;max-width:350px;border-radius:15px}
+button{background:#087f70;color:white;padding:10px;border:0;border-radius:6px;cursor:pointer}
+input,select{padding:10px;margin:8px;border:1px solid #aaa;border-radius:6px}
+h2{color:#123c40}
+</style>
+</head>
+<body>
+
+<header>
+<h1>💼 JobConnect</h1>
+<p>Find Your Dream Job Today!</p>
+</header>
+
+<h2>Available Vacancies</h2>
+
+<div class="card">
+<h3>Web Developer</h3>
+<p>Company: Tech Solutions</p>
+<p>Salary: ₹25,000/month</p>
+<button onclick="apply('Web Developer')">Apply Now</button>
+</div>
+
+<div class="card">
+<h3>Software Engineer</h3>
+<p>Company: Digital World</p>
+<p>Salary: ₹35,000/month</p>
+<button onclick="apply('Software Engineer')">Apply Now</button>
+</div>
+
+<div class="card">
+<h2>Search Jobs</h2>
+<input id="search" placeholder="Enter Job Title">
+<button onclick="findJob()">Search</button>
+<p id="result"></p>
+</div>
+
+<div class="card">
+<h2>Upload Resume</h2>
+<input type="file" accept=".pdf,.doc,.docx"><br>
+<input type="email" placeholder="Your Email"><br>
+<select>
+<option>Public Resume</option>
+<option>Private Resume</option>
+</select><br>
+<button onclick="alert('Resume Submitted Successfully!')">Submit Resume</button>
+</div>
+
+<script>
+function apply(job){
+alert("Successfully Applied for "+job);
+}
+function findJob(){
+let job=document.getElementById("search").value;
+document.getElementById("result").innerHTML=
+job===""?"Enter a job title":"Searching for: "+job;
+}
+</script>
+
+</body>
+</html>
