@@ -1,0 +1,60 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<title>AgriMart</title>
+<style>
+body{text-align:center;font-family:Arial;background:#e8f5e9;margin:0}
+header{background:#2e7d32;color:white;padding:20px}
+.card{display:inline-block;background:white;padding:15px;margin:10px;border-radius:12px}
+img{width:140px;height:110px}
+button{background:#2e7d32;color:white;padding:10px;border:0}
+input{padding:10px;margin:8px}
+</style>
+</head>
+<body>
+
+<header>
+<h1>🌱 AgriMart</h1>
+<p>Your One-Stop Agricultural Store</p>
+</header>
+
+<h2>Our Products</h2>
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1500382017468-9049fed747ef?w=300">
+<h3>Seeds</h3>
+<p>₹200</p>
+<button onclick="buy('Seeds')">Buy Now</button>
+</div>
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1416879595882-3373a0480b5b?w=300">
+<h3>Fertilizers</h3>
+<p>₹500</p>
+<button onclick="buy('Fertilizers')">Buy Now</button>
+</div>
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1592982537447-6f2a6a0e9b5a?w=300">
+<h3>Farm Tools</h3>
+<p>₹800</p>
+<button onclick="buy('Farm Tools')">Buy Now</button>
+</div>
+
+<h2>Customer Login</h2>
+<input placeholder="Username">
+<input type="password" placeholder="Password">
+<button onclick="alert('Login Successful!')">Login</button>
+
+<p id="result"></p>
+
+<script>
+function buy(item){
+document.getElementById("result").innerHTML=
+item+" ordered successfully! Thank you for shopping.";
+}
+</script>
+
+</body>
+</html>
