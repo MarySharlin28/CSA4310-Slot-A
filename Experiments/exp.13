@@ -1,0 +1,49 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<title>BlossomGifts</title>
+<style>
+body{text-align:center;background:#ffe4ec;font-family:Arial}
+header{background:#e75480;color:white;padding:15px}
+.card{display:inline-block;background:white;padding:15px;margin:10px;border-radius:12px}
+img{width:150px;height:120px}
+button{background:#e75480;color:white;padding:10px;border:0}
+</style>
+</head>
+<body>
+
+<header>
+<h1>🌸 BlossomGifts 🌸</h1>
+<p>Gifts for Every Occasion</p>
+</header>
+
+<h2>Our Products</h2>
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1494972308805-463bc619d34e?w=300">
+<h3>Rose Bouquet</h3>
+<p>₹599</p>
+<button onclick="buy('Rose Bouquet')">Buy Now</button>
+</div>
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1513201099705-a9746e1e201f?w=300">
+<h3>Gift Box</h3>
+<p>₹999</p>
+<button onclick="buy('Gift Box')">Buy Now</button>
+</div>
+
+<h2>Delivery Details</h2>
+<input id="name" placeholder="Your Name"><br><br>
+<input type="date" id="date"><br><br>
+<button onclick="alert('Order Confirmed! Thank You '+document.getElementById('name').value)">Place Order</button>
+
+<script>
+function buy(item){
+alert(item+" Selected Successfully!");
+}
+</script>
+
+</body>
+</html>
