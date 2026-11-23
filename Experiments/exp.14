@@ -1,0 +1,63 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<title>ReNewMarket</title>
+<style>
+body{text-align:center;font-family:Arial;background:#e8f5e9;margin:0}
+header{background:#228b55;color:white;padding:20px}
+.card{display:inline-block;background:white;padding:15px;margin:12px;border-radius:12px}
+img{width:150px;height:120px}
+button{background:#228b55;color:white;padding:10px;border:0;cursor:pointer}
+input,select{padding:10px;margin:8px}
+</style>
+</head>
+<body>
+
+<header>
+<h1>♻ ReNewMarket</h1>
+<p>Buy, Sell and Reuse!</p>
+</header>
+
+<h2>Available Products</h2>
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=300">
+<h3>Headphones</h3>
+<p>₹500</p>
+<button onclick="buy('Headphones')">Buy Now</button>
+</div>
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=300">
+<h3>Sofa</h3>
+<p>₹2500</p>
+<button onclick="buy('Sofa')">Buy Now</button>
+</div>
+
+<h2>Sell Your Product</h2>
+<input id="item" placeholder="Product Name">
+<input id="price" placeholder="Price"><br>
+<button onclick="sell()">Add Listing</button>
+
+<h2>Contact / Login</h2>
+<input placeholder="Username">
+<input type="password" placeholder="Password"><br>
+<button onclick="alert('Welcome to ReNewMarket!')">Login</button>
+
+<p id="result"></p>
+
+<script>
+function buy(item){
+alert(item+" selected successfully!");
+}
+function sell(){
+let item=document.getElementById("item").value;
+let price=document.getElementById("price").value;
+document.getElementById("result").innerHTML=
+item+" listed successfully! Price: ₹"+price;
+}
+</script>
+
+</body>
+</html>
