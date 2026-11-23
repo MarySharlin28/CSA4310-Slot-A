@@ -1,0 +1,57 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<title>EasyToll</title>
+<style>
+body{text-align:center;font-family:Arial;background:#e3f2fd;margin:0}
+header{background:#1565c0;color:white;padding:20px}
+.box{background:white;padding:20px;margin:20px auto;width:300px;border-radius:12px}
+input{padding:10px;margin:8px}
+button{background:#1565c0;color:white;padding:10px;border:0;cursor:pointer}
+</style>
+</head>
+<body>
+
+<header>
+<h1>🚗 EasyToll</h1>
+<p>Pay Toll in Advance – Travel Without Waiting!</p>
+</header>
+
+<div class="box">
+<h2>Login / Register</h2>
+<input placeholder="Username"><br>
+<input type="password" placeholder="Password"><br>
+<button onclick="alert('Login Successful!')">Login</button>
+</div>
+
+<div class="box">
+<h2>Vehicle Details</h2>
+<input id="vehicle" placeholder="Vehicle Number"><br>
+<input id="route" placeholder="Travel Route"><br>
+<h3>Toll Amount: ₹100</h3>
+<button onclick="pay()">Pay Toll</button>
+<p id="result"></p>
+</div>
+
+<div class="box">
+<h2>Payment History</h2>
+<p id="history">No payments yet</p>
+</div>
+
+<script>
+function pay(){
+let v=document.getElementById("vehicle").value;
+let r=document.getElementById("route").value;
+if(v===""||r===""){
+alert("Enter vehicle number and route");
+return;
+}
+document.getElementById("result").innerHTML="Payment Successful! ✅";
+document.getElementById("history").innerHTML=
+"Vehicle: "+v+"<br>Route: "+r+"<br>Paid: ₹100";
+}
+</script>
+
+</body>
+</html>
