@@ -1,0 +1,76 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<title>RentRide</title>
+<style>
+body{margin:0;font-family:Arial;background:#e8edf5;text-align:center}
+header{background:#14213d;color:white;padding:25px}
+.card{display:inline-block;background:white;margin:12px;padding:15px;width:210px;border-radius:15px}
+img{width:190px;height:120px;border-radius:10px}
+button{background:#fca311;color:#14213d;border:0;padding:10px;border-radius:6px;cursor:pointer}
+input,select{padding:10px;margin:7px;border:1px solid #aaa;border-radius:6px}
+h2{color:#14213d}
+</style>
+</head>
+<body>
+
+<header>
+<h1>🚗 RentRide</h1>
+<p>Your Journey, Your Choice!</p>
+</header>
+
+<h2>Available Vehicles</h2>
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1494976388531-d1058494cdd8?w=400">
+<h3>Luxury Car</h3>
+<p>₹2000 / Day</p>
+<button onclick="book('Luxury Car')">Book Now</button>
+</div>
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1519641471654-76ce0107ad1b?w=400">
+<h3>SUV</h3>
+<p>₹3000 / Day</p>
+<button onclick="book('SUV')">Book Now</button>
+</div>
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1519003722824-194d4455a60e?w=400">
+<h3>Truck</h3>
+<p>₹4000 / Day</p>
+<button onclick="book('Truck')">Book Now</button>
+</div>
+
+<h2>Vehicle Booking</h2>
+<input id="name" placeholder="Customer Name"><br>
+<select id="type">
+<option>Car</option>
+<option>SUV</option>
+<option>Truck</option>
+</select><br>
+<input type="date" id="date"><br>
+<input type="number" id="days" placeholder="Rental Days"><br>
+<button onclick="confirmBooking()">Confirm Booking</button>
+
+<p id="result"></p>
+
+<script>
+let vehicle="Luxury Car";
+function book(v){
+vehicle=v;
+document.getElementById("type").value=
+v==="Luxury Car"?"Car":v;
+alert(v+" Selected!");
+}
+function confirmBooking(){
+let n=document.getElementById("name").value;
+if(n===""){alert("Enter your name");return;}
+document.getElementById("result").innerHTML=
+"Booking Confirmed for "+n+" - "+vehicle+" 🚗";
+}
+</script>
+
+</body>
+</html>
