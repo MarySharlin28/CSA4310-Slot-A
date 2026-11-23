@@ -1,0 +1,65 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<title>EcoWaste</title>
+<style>
+body{margin:0;font-family:Arial;background:#f1f8e9;text-align:center}
+header{background:#285943;color:white;padding:22px}
+.card{display:inline-block;background:white;padding:18px;margin:12px;width:200px;border-radius:15px;box-shadow:0 3px 8px #bbb}
+button{background:#e0a82e;color:white;border:0;padding:10px;border-radius:6px;cursor:pointer}
+input,select{padding:10px;margin:8px;border-radius:6px}
+h2{color:#285943}
+</style>
+</head>
+<body>
+
+<header>
+<h1>♻ EcoWaste Management</h1>
+<p>Clean City, Green Future!</p>
+</header>
+
+<h2>Waste Management Dashboard</h2>
+
+<div class="card">
+<h3>Waste Collection</h3>
+<p>Bins Collected: 25</p>
+<p>Status: Active</p>
+</div>
+
+<div class="card">
+<h3>Waste Segregation</h3>
+<p>Dry Waste: 60%</p>
+<p>Wet Waste: 40%</p>
+</div>
+
+<div class="card">
+<h3>Transportation</h3>
+<p>Available Trucks: 5</p>
+<button onclick="alert('Truck Route Assigned!')">Assign Route</button>
+</div>
+
+<h2>Report Waste Collection</h2>
+<input id="location" placeholder="Enter Location"><br>
+<select id="waste">
+<option>Dry Waste</option>
+<option>Wet Waste</option>
+<option>Plastic Waste</option>
+</select><br>
+<button onclick="report()">Submit Report</button>
+
+<h2>Admin Dashboard</h2>
+<p id="result">Waiting for Reports...</p>
+
+<script>
+function report(){
+let loc=document.getElementById("location").value;
+let waste=document.getElementById("waste").value;
+if(loc===""){alert("Enter Location");return;}
+document.getElementById("result").innerHTML=
+waste+" reported at "+loc+" successfully!";
+}
+</script>
+
+</body>
+</html>
