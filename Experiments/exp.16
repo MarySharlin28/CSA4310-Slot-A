@@ -1,0 +1,25 @@
+```html
+<!DOCTYPE html>
+<html>
+<head>
+    <title>ComplainEase</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <h1>ComplainEase</h1>
+    <h3>Online Complaint Management System</h3>
+
+    <input type="text" id="name" placeholder="Enter your name">
+    <input type="text" id="category" placeholder="Complaint category">
+    <textarea id="complaint" placeholder="Enter your complaint"></textarea>
+
+    <button id="submitBtn">Submit Complaint</button>
+
+    <h3>Complaint History</h3>
+    <div id="result"></div>
+
+    <script src="script.js"></script>
+</body>
+</html>
+```
