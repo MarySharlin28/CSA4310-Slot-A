@@ -1,0 +1,73 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<title>VetCare</title>
+<style>
+body{font-family:Arial;margin:0;background:#e9e4ff;text-align:center}
+header{background:#49358b;color:white;padding:22px}
+.box{background:white;margin:18px auto;padding:18px;width:80%;max-width:400px;border-radius:18px;box-shadow:0 4px 12px #aaa}
+input,textarea,select{padding:10px;margin:7px;width:85%;border:1px solid #aaa;border-radius:6px}
+button{background:#49358b;color:white;padding:11px 20px;border:0;border-radius:7px;cursor:pointer}
+h2{color:#49358b}
+</style>
+</head>
+<body>
+
+<header>
+<h1>🐾 VetCare</h1>
+<p>Online Animal Doctor Consultation</p>
+</header>
+
+<div class="box">
+<h2>Farmer Registration</h2>
+<input placeholder="Farmer Name">
+<input placeholder="Email">
+<input placeholder="Phone Number">
+<input type="password" placeholder="Password">
+<button onclick="alert('Registration Successful!')">Register</button>
+</div>
+
+<div class="box">
+<h2>Choose Doctor</h2>
+<select id="doctor">
+<option>Government Veterinary Doctor - Free</option>
+<option>Private Veterinary Doctor - ₹200</option>
+</select>
+<button onclick="alert('Subscription Selected!')">Subscribe</button>
+</div>
+
+<div class="box">
+<h2>Animal Health Request</h2>
+<input placeholder="Animal Name">
+<textarea id="symptoms" placeholder="Enter Signs and Symptoms"></textarea>
+<input type="file" accept="image/*,video/*,audio/*">
+<button onclick="send()">Send to Doctor</button>
+<p id="result"></p>
+</div>
+
+<div class="box">
+<h2>Payment</h2>
+<select>
+<option>Bank Transfer</option>
+<option>EasyPaisa</option>
+</select>
+<button onclick="alert('Payment Request Submitted!')">Pay Now</button>
+</div>
+
+<div class="box">
+<h2>Doctor Response</h2>
+<textarea placeholder="Doctor Prescription / Advice"></textarea>
+<button onclick="alert('Response Saved!')">Submit</button>
+</div>
+
+<script>
+function send(){
+let s=document.getElementById("symptoms").value;
+if(s==""){alert("Enter animal symptoms");return;}
+document.getElementById("result").innerHTML="Request sent successfully to doctor! 🐾";
+}
+</script>
+
+</body>
+</html>
