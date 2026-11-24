@@ -1,0 +1,68 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<title>KodaikanalEats</title>
+<style>
+body{text-align:center;font-family:Arial;background:linear-gradient(120deg,#134e4a,#a8c686);margin:0}
+header{background:#183d35;color:white;padding:20px}
+.box{background:white;margin:25px auto;padding:20px;width:75%;border-radius:15px}
+.food{background:#e5f3e5;padding:12px;margin:10px;border-radius:10px}
+input,select{padding:10px;margin:8px}
+button{background:#28734d;color:white;padding:10px;border:0;border-radius:5px}
+</style>
+</head>
+<body>
+
+<header>
+<h1>🍽️ KODAIKANALEATS</h1>
+<p>Discover • Dine • Enjoy</p>
+</header>
+
+<div class="box">
+<h2>Find Restaurants</h2>
+<input id="search" placeholder="Search restaurant">
+<select id="type">
+<option>Indian</option>
+<option>Chinese</option>
+<option>Italian</option>
+</select>
+<button onclick="alert('Searching restaurants...')">Search</button>
+
+<h2>Popular Restaurants</h2>
+<div class="food">
+<h3>Hilltop Restaurant</h3>
+<p>Indian Food | ⭐ 4.5</p>
+<button onclick="book('Hilltop Restaurant')">Book Table</button>
+</div>
+<div class="food">
+<h3>Green Valley Cafe</h3>
+<p>Chinese Food | ⭐ 4.2</p>
+<button onclick="book('Green Valley Cafe')">Book Table</button>
+</div>
+
+<h2>Table Booking</h2>
+<input id="name" placeholder="Your Name"><br>
+<input id="date" type="date"><br>
+<input id="time" type="time"><br>
+<button onclick="confirmBook()">Confirm Booking</button>
+<h3 id="result"></h3>
+</div>
+
+<script>
+let restaurant="";
+function book(r){
+restaurant=r;
+alert("Selected: "+r);
+}
+function confirmBook(){
+let n=document.getElementById("name").value;
+if(!n||!restaurant||!date.value||!time.value){
+alert("Fill all details");return;
+}
+document.getElementById("result").innerText=
+"Booking Confirmed! "+restaurant+" - "+n;
+}
+</script>
+</body>
+</html>
