@@ -1,0 +1,85 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<title>Smart Bus Pass</title>
+<style>
+body{font-family:Arial;text-align:center;margin:0;
+background:linear-gradient(120deg,#42275a,#734b6d)}
+header{background:#f1c40f;color:#222;padding:20px}
+.box{background:white;width:75%;margin:30px auto;
+padding:22px;border-radius:15px}
+input,select{padding:10px;margin:8px;border:1px solid #aaa;border-radius:6px}
+button{background:#734b9b;color:white;padding:11px 20px;
+border:0;border-radius:6px;cursor:pointer}
+button:hover{background:#42275a}
+</style>
+</head>
+<body>
+
+<header>
+<h1>🚌 SMART BUS PASS</h1>
+<p>Easy Online Bus Pass Registration</p>
+</header>
+
+<div class="box">
+<h2>Bus Pass Application</h2>
+
+<input id="name" placeholder="Candidate Name"><br>
+<input id="address" placeholder="Address"><br>
+<input id="dob" type="date"><br>
+<input id="email" type="email" placeholder="Email ID"><br>
+
+<select id="type" onchange="update()">
+<option value="student">Student</option>
+<option value="employee">Employee</option>
+</select><br>
+
+<input id="organization" placeholder="School Name"><br>
+
+<select id="validity" onchange="update()">
+<option value="1">1 Month</option>
+<option value="3">3 Months</option>
+<option value="6">6 Months</option>
+</select><br>
+
+<input type="file" id="photo" accept="image/*"><br>
+
+<h3>Amount: ₹<span id="amount">100</span></h3>
+
+<button onclick="apply()">Apply Bus Pass</button>
+<button onclick="renew()">Renew Pass</button>
+
+<h3 id="result"></h3>
+</div>
+
+<script>
+function update(){
+let type=document.getElementById("type").value;
+let months=+document.getElementById("validity").value;
+let amount=type==="student"?0:100*months;
+document.getElementById("amount").innerText=amount;
+document.getElementById("organization").placeholder=
+type==="student"?"School Name":"Working Organization";
+}
+function apply(){
+let n=document.getElementById("name").value;
+let a=document.getElementById("address").value;
+let e=document.getElementById("email").value;
+let p=document.getElementById("photo").files.length;
+if(!n||!a||!e||!p){
+alert("Fill all details and upload photo");return;
+}
+document.getElementById("result").innerText=
+"Bus Pass Applied Successfully! Name: "+n+
+" | Amount: ₹"+document.getElementById("amount").innerText;
+}
+function renew(){
+update();
+document.getElementById("result").innerText=
+"Renewal Amount: ₹"+document.getElementById("amount").innerText;
+}
+update();
+</script>
+</body>
+</html>
