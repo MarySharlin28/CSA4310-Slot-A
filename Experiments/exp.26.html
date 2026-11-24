@@ -1,0 +1,70 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<title>Traffic Squad</title>
+<style>
+body{font-family:Arial;margin:0;text-align:center;
+background:linear-gradient(120deg,#141e30,#536976)}
+header{background:#e74c3c;color:white;padding:20px}
+.box{background:white;width:75%;margin:30px auto;
+padding:25px;border-radius:15px}
+input,select{padding:11px;margin:9px;border:1px solid #aaa;border-radius:5px}
+button{background:#e74c3c;color:white;padding:11px 20px;
+border:0;border-radius:6px;cursor:pointer}
+button:hover{background:#a93226}
+</style>
+</head>
+<body>
+
+<header>
+<h1>🚦 TRAFFIC SQUAD</h1>
+<p>Penalty Collection & Management System</p>
+</header>
+
+<div class="box">
+<h2>Register Traffic Violation</h2>
+
+<input id="owner" placeholder="Vehicle Owner Name"><br>
+<input id="number" placeholder="Vehicle Number"><br>
+
+<select id="violation">
+<option value="500">No Helmet - ₹500</option>
+<option value="1000">Signal Jump - ₹1000</option>
+<option value="2000">Over Speeding - ₹2000</option>
+<option value="1500">No Parking - ₹1500</option>
+</select><br>
+
+<label>Upload Vehicle Photo:</label><br>
+<input type="file" id="photo" accept="image/*"><br>
+
+<button onclick="generate()">Generate FIR</button>
+
+<h2>FIR Receipt</h2>
+<div id="receipt">No FIR Generated</div>
+</div>
+
+<script>
+function generate(){
+let name=document.getElementById("owner").value;
+let num=document.getElementById("number").value;
+let v=document.getElementById("violation");
+let photo=document.getElementById("photo").files[0];
+
+if(!name||!num||!photo){
+alert("Please fill all details and upload photo");
+return;
+}
+
+document.getElementById("receipt").innerHTML=
+"<h3>FIR Registered Successfully!</h3>"+
+"Owner: "+name+"<br>"+
+"Vehicle Number: "+num+"<br>"+
+"Violation: "+v.options[v.selectedIndex].text+"<br>"+
+"Fine Amount: ₹"+v.value+"<br>"+
+"Receipt No: FIR"+Date.now().toString().slice(-6);
+}
+</script>
+
+</body>
+</html>
