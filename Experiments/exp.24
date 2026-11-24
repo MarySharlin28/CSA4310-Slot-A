@@ -1,0 +1,71 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<title>Wanderlust Travels</title>
+<style>
+body{font-family:Arial;text-align:center;margin:0;background:linear-gradient(120deg,#2193b0,#6dd5a7)}
+header{background:#164b55;color:white;padding:20px}
+.box{background:white;margin:30px auto;padding:20px;width:75%;border-radius:15px}
+input,select{padding:10px;margin:8px;border-radius:6px;border:1px solid #aaa}
+button{background:#168477;color:white;padding:10px;border:0;border-radius:6px;cursor:pointer}
+.place{background:#e3f5ef;padding:12px;margin:12px;border-radius:10px}
+</style>
+</head>
+<body>
+
+<header>
+<h1>🌍 WANDERLUST TRAVELS</h1>
+<p>Explore The World!</p>
+</header>
+
+<div class="box">
+<h2>Plan Your Trip</h2>
+<input id="destination" placeholder="Destination">
+<input type="date">
+<select>
+<option>Flight</option>
+<option>Hotel</option>
+<option>Car Rental</option>
+</select>
+
+<h2>Popular Destinations</h2>
+<div class="place">
+<h3>Goa 🏖️</h3>
+<button onclick="book('Goa')">Book Now</button>
+</div>
+<div class="place">
+<h3>Ooty ⛰️</h3>
+<button onclick="book('Ooty')">Book Now</button>
+</div>
+<div class="place">
+<h3>Dubai 🌆</h3>
+<button onclick="book('Dubai')">Book Now</button>
+</div>
+
+<h2>Booking Form</h2>
+<input id="name" placeholder="Your Name"><br>
+<input id="email" placeholder="Email"><br>
+<button onclick="confirmBooking()">Confirm Booking</button>
+<h3 id="result"></h3>
+</div>
+
+<script>
+let place="";
+function book(p){
+place=p;
+document.getElementById("destination").value=p;
+}
+function confirmBooking(){
+let n=document.getElementById("name").value;
+let e=document.getElementById("email").value;
+if(!n||!e||!place){
+alert("Fill details and select a destination");
+return;
+}
+document.getElementById("result").innerText=
+"Booking Confirmed for "+place+"! Thank you "+n;
+}
+</script>
+</body>
+</html>
