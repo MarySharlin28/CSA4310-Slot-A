@@ -1,0 +1,92 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<title>IJSSE Journal</title>
+<style>
+body{margin:0;font-family:Georgia;text-align:center;
+background:linear-gradient(120deg,#16222a,#3a6073);color:#222}
+header{background:#d4af37;padding:25px;color:#17202a}
+nav{background:#17202a;padding:15px}
+nav a{color:white;margin:12px;text-decoration:none}
+.box{background:white;width:80%;margin:25px auto;
+padding:20px;border-radius:12px}
+.card{background:#eaf1f5;padding:15px;margin:12px;border-radius:8px}
+button{background:#24536b;color:white;padding:10px 20px;
+border:0;border-radius:5px;cursor:pointer}
+input,select{padding:10px;margin:8px;border:1px solid #aaa}
+</style>
+</head>
+<body>
+
+<header>
+<h1>📚 IJSSE</h1>
+<h3>International Journal of Scientific and Social Excellence</h3>
+<p>Print ISSN: 2395-1443 | Online ISSN: 2395-1451</p>
+</header>
+
+<nav>
+<a href="#about">About</a>
+<a href="#authors">Authors</a>
+<a href="#reviewers">Reviewers</a>
+<a href="#editors">Editors</a>
+<a href="#register">Register</a>
+</nav>
+
+<div class="box" id="about">
+<h2>About Journal</h2>
+<p>IJSSE provides a platform for publishing quality
+scientific and social research papers. It encourages
+researchers and scholars to share their knowledge.</p>
+</div>
+
+<div class="box" id="authors">
+<div class="card">
+<h2>For Authors</h2>
+<p>Submit manuscripts and check submission guidelines.</p>
+<button onclick="alert('Author manuscript submission')">Submit Paper</button>
+</div>
+
+<div class="card" id="reviewers">
+<h2>For Reviewers</h2>
+<p>Review submitted papers and provide feedback.</p>
+<button onclick="alert('Reviewer section opened')">Review Paper</button>
+</div>
+
+<div class="card" id="editors">
+<h2>For Editors</h2>
+<p>Manage submissions and coordinate peer reviews.</p>
+<button onclick="alert('Editor dashboard opened')">Editor Dashboard</button>
+</div>
+</div>
+
+<div class="box" id="register">
+<h2>User Registration</h2>
+<input id="name" placeholder="Full Name"><br>
+<input id="email" placeholder="Email Address"><br>
+<select id="role">
+<option>Author</option>
+<option>Reviewer</option>
+<option>Editor</option>
+</select><br>
+<button onclick="register()">Register Now</button>
+<h3 id="result"></h3>
+</div>
+
+<footer style="color:white;padding:15px">
+© 2026 IJSSE | Academic Journal Publication
+</footer>
+
+<script>
+function register(){
+let n=document.getElementById("name").value;
+let e=document.getElementById("email").value;
+let r=document.getElementById("role").value;
+if(!n||!e){alert("Enter all details");return;}
+document.getElementById("result").innerText=
+"Registration Successful! Welcome "+n+" ("+r+")";
+}
+</script>
+
+</body>
+</html>
