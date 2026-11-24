@@ -1,0 +1,80 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<title>Road Rescue</title>
+<style>
+body{margin:0;font-family:Arial;text-align:center;
+background:linear-gradient(120deg,#232526,#414345);color:white}
+header{background:#f39c12;padding:20px;color:#222}
+.box{background:white;color:#222;width:75%;margin:30px auto;
+padding:20px;border-radius:15px}
+input,select{padding:12px;margin:10px;border:1px solid #aaa;border-radius:6px}
+button{background:#e67e22;color:white;padding:11px 20px;
+border:0;border-radius:6px;cursor:pointer}
+button:hover{background:#b85c10}
+.mechanic{background:#fff0d9;padding:15px;margin:12px;border-radius:10px}
+</style>
+</head>
+<body>
+
+<header>
+<h1>🚗 ROAD RESCUE</h1>
+<p>Quick Help When Your Vehicle Breaks Down!</p>
+</header>
+
+<div class="box">
+<h2>Find Nearby Mechanics</h2>
+<input id="location" placeholder="Enter Your Location">
+<select id="vehicle">
+<option>Car</option>
+<option>Bike</option>
+<option>Van</option>
+</select>
+<button onclick="search()">Search</button>
+
+<h2>Available Licensed Mechanics</h2>
+<div class="mechanic">
+<h3>Ravi Auto Service</h3>
+<p>Location: Chennai | Licensed Mechanic</p>
+<button onclick="request('Ravi Auto Service')">Request Help</button>
+</div>
+
+<div class="mechanic">
+<h3>Quick Car Repairs</h3>
+<p>Location: Avadi | Licensed Mechanic</p>
+<button onclick="request('Quick Car Repairs')">Request Help</button>
+</div>
+
+<h2>Breakdown Assistance</h2>
+<input id="name" placeholder="Your Name"><br>
+<input id="problem" placeholder="Vehicle Problem"><br>
+<button onclick="send()">Submit Request</button>
+
+<h3 id="result"></h3>
+</div>
+
+<script>
+let mechanic="";
+function search(){
+let l=document.getElementById("location").value;
+if(!l){alert("Enter your location");return;}
+alert("Searching mechanics near "+l);
+}
+function request(m){
+mechanic=m;
+document.getElementById("result").innerText="Selected: "+m;
+}
+function send(){
+let n=document.getElementById("name").value;
+let p=document.getElementById("problem").value;
+if(!n||!p||!mechanic){
+alert("Fill details and select a mechanic");return;
+}
+document.getElementById("result").innerText=
+"Assistance requested from "+mechanic+". Thank you "+n;
+}
+</script>
+
+</body>
+</html>
