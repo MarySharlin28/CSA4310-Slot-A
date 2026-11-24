@@ -1,0 +1,66 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<title>LifeBlood</title>
+<style>
+body{margin:0;font-family:Arial;background:#fff1e8;text-align:center}
+header{background:#a4162a;color:white;padding:25px}
+.card{display:inline-block;background:white;padding:18px;margin:12px;width:190px;border-radius:15px;box-shadow:0 3px 8px #ccc}
+button{background:#a4162a;color:white;padding:10px;border:0;border-radius:6px}
+input,select{padding:10px;margin:8px;border:1px solid #aaa;border-radius:6px}
+h2{color:#a4162a}
+</style>
+</head>
+<body>
+
+<header>
+<h1>🩸 LifeBlood</h1>
+<p>Donate Blood, Save Lives!</p>
+</header>
+
+<h2>Blood Availability</h2>
+
+<div class="card">
+<h3>A+ Blood</h3>
+<p>Available: 20 Units</p>
+</div>
+
+<div class="card">
+<h3>B+ Blood</h3>
+<p>Available: 15 Units</p>
+</div>
+
+<div class="card">
+<h3>O+ Blood</h3>
+<p>Available: 25 Units</p>
+</div>
+
+<h2>Donor Registration</h2>
+<input id="name" placeholder="Donor Name"><br>
+<input id="phone" placeholder="Phone Number"><br>
+<select id="blood">
+<option>A+</option><option>A-</option>
+<option>B+</option><option>B-</option>
+<option>O+</option><option>O-</option>
+<option>AB+</option><option>AB-</option>
+</select><br>
+<button onclick="register()">Register Donor</button>
+
+<p id="result"></p>
+
+<h2>Admin Dashboard</h2>
+<button onclick="alert('Donor Records Updated!')">View Donor Records</button>
+
+<script>
+function register(){
+let n=document.getElementById("name").value;
+let b=document.getElementById("blood").value;
+if(n===""){alert("Enter donor name");return;}
+document.getElementById("result").innerHTML=
+"Thank you "+n+"! Registered for "+b+" blood donation.";
+}
+</script>
+
+</body>
+</html>
