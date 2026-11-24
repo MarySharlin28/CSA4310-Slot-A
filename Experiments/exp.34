@@ -1,0 +1,103 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<title>LearnWell Tuition Centre</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0;font-family:Arial;background:#fff7ed;color:#333}
+header{background:linear-gradient(120deg,#42206b,#b04483);
+color:white;text-align:center;padding:30px}
+nav{background:#291640;padding:15px;text-align:center}
+nav a{color:white;text-decoration:none;margin:10px;font-weight:bold}
+section{background:white;margin:20px auto;padding:22px;
+max-width:850px;border-radius:15px;box-shadow:0 3px 12px #ddd}
+h2{color:#8b3478}
+.course{background:#fce7f3;padding:12px;margin:10px;border-radius:8px}
+input,select,textarea{width:100%;padding:10px;margin:8px 0;
+border:1px solid #ccc;border-radius:6px}
+button{background:#8b3478;color:white;border:0;padding:11px 20px;
+border-radius:7px;cursor:pointer}
+button:hover{background:#42206b}
+footer{background:#291640;color:white;text-align:center;padding:18px}
+</style>
+</head>
+<body>
+
+<header>
+<h1>📚 LearnWell Tuition Centre</h1>
+<p>Learn Today, Lead Tomorrow!</p>
+</header>
+
+<nav>
+<a href="#ann">Announcements</a>
+<a href="#courses">Courses</a>
+<a href="#register">Register</a>
+<a href="#about">About</a>
+<a href="#contact">Contact</a>
+</nav>
+
+<section id="ann">
+<h2>📢 Announcements</h2>
+<p>• New batch starts on December 1.</p>
+<p>• Monthly test will be conducted this Saturday.</p>
+<p>• Parent-teacher meeting on December 10.</p>
+</section>
+
+<section id="courses">
+<h2>📖 Course Offerings</h2>
+<div class="course">Mathematics – ₹1000/month</div>
+<div class="course">Science – ₹1200/month</div>
+<div class="course">English – ₹800/month</div>
+<div class="course">Computer Science – ₹1500/month</div>
+</section>
+
+<section id="register">
+<h2>📝 Online Registration</h2>
+<input id="student" placeholder="Student Name">
+<input id="phone" placeholder="Parent Phone Number">
+<select id="course">
+<option>Mathematics</option>
+<option>Science</option>
+<option>English</option>
+<option>Computer Science</option>
+</select>
+<button onclick="register()">Register Now</button>
+</section>
+
+<section>
+<h2>🛠 Maintenance Requests</h2>
+<textarea id="issue" placeholder="Describe your issue"></textarea>
+<button onclick="requestHelp()">Submit Request</button>
+</section>
+
+<section id="about">
+<h2>🏫 About Us</h2>
+<p>LearnWell Tuition Centre provides quality education through experienced teachers, personal attention and student-friendly learning methods. Our mission is to help every student achieve academic success.</p>
+</section>
+
+<section id="contact">
+<h2>📞 Contact Us</h2>
+<p>Email: learnwell@gmail.com</p>
+<p>Phone: 9876543210</p>
+<p>Address: Main Road, Chennai</p>
+</section>
+
+<footer>© 2026 LearnWell Tuition Centre</footer>
+
+<script>
+function register(){
+let name=document.getElementById("student").value;
+let course=document.getElementById("course").value;
+if(name===""){alert("Enter student name");return;}
+alert("Registration successful! Welcome "+name+" for "+course);
+}
+function requestHelp(){
+let issue=document.getElementById("issue").value;
+if(issue===""){alert("Please enter your issue");return;}
+alert("Maintenance request submitted successfully!");
+}
+</script>
+
+</body>
+</html>
