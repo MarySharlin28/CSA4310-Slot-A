@@ -1,0 +1,92 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<title>TechFest Event</title>
+<style>
+body{margin:0;font-family:Arial;text-align:center;
+background:linear-gradient(120deg,#141e30,#243b55);color:#222}
+header{background:#ffb703;padding:25px;color:#14213d}
+nav{background:#14213d;padding:15px}
+nav a{color:white;margin:15px;text-decoration:none}
+.box{background:white;margin:25px auto;padding:20px;
+width:80%;border-radius:15px}
+.speaker{display:inline-block;background:#e8f1ff;
+padding:15px;margin:10px;border-radius:10px}
+.speaker img{width:100px;height:100px;border-radius:50%}
+button{background:#e76f51;color:white;padding:12px 25px;
+border:0;border-radius:7px;cursor:pointer}
+input{padding:10px;margin:8px;border:1px solid #aaa}
+</style>
+</head>
+<body>
+
+<header>
+<h1>🚀 TECHFEST 2026</h1>
+<p>Innovation | Technology | Future</p>
+<h3>📍 Chennai | 20 December 2026</h3>
+</header>
+
+<nav>
+<a href="#about">About</a>
+<a href="#speakers">Speakers</a>
+<a href="#schedule">Schedule</a>
+<a href="#register">Register</a>
+</nav>
+
+<div class="box" id="about">
+<h2>About The Event</h2>
+<p>TechFest is a technology event for students,
+developers and professionals to explore innovation,
+AI and modern technology.</p>
+</div>
+
+<div class="box" id="speakers">
+<h2>Our Speakers</h2>
+<div class="speaker">
+<img src="https://i.pravatar.cc/100?img=12">
+<h3>John David</h3>
+<p>AI Expert</p>
+<a href="#">Profile</a>
+</div>
+<div class="speaker">
+<img src="https://i.pravatar.cc/100?img=47">
+<h3>Sarah Miller</h3>
+<p>Web Developer</p>
+<a href="#">Profile</a>
+</div>
+</div>
+
+<div class="box" id="schedule">
+<h2>Event Schedule</h2>
+<p>10:00 AM - Opening Ceremony</p>
+<p>11:00 AM - AI Workshop</p>
+<p>01:00 PM - Lunch Break</p>
+<p>02:00 PM - Guest Speech</p>
+<p>04:00 PM - Closing Ceremony</p>
+</div>
+
+<div class="box" id="register">
+<h2>Event Registration</h2>
+<input id="name" placeholder="Your Name"><br>
+<input id="email" placeholder="Email Address"><br>
+<button onclick="register()">Register Now</button>
+<h3 id="result"></h3>
+</div>
+
+<footer style="color:white;padding:15px">
+© 2026 TechFest | All Rights Reserved
+</footer>
+
+<script>
+function register(){
+let n=document.getElementById("name").value;
+let e=document.getElementById("email").value;
+if(!n||!e){alert("Please fill all details");return;}
+document.getElementById("result").innerText=
+"Registration Successful! Welcome "+n;
+}
+</script>
+
+</body>
+</html>
