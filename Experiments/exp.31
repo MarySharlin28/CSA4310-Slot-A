@@ -1,0 +1,91 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<title>Ko-Matha Dairy Farm</title>
+<style>
+body{margin:0;font-family:Arial;background:linear-gradient(120deg,#134e5e,#71b280);text-align:center;color:#333}
+header{background:#fff0c2;padding:22px;color:#654321}
+nav{background:#285943;padding:15px}
+nav a{color:white;margin:12px;text-decoration:none}
+.box{background:white;width:80%;margin:25px auto;padding:20px;border-radius:15px}
+.product{display:inline-block;background:#e7f5e9;padding:15px;margin:10px;border-radius:10px;width:150px}
+button{background:#39834e;color:white;padding:10px 18px;border:0;border-radius:6px;cursor:pointer}
+input,textarea{padding:10px;margin:8px;border:1px solid #aaa;border-radius:5px}
+</style>
+</head>
+<body>
+
+<header>
+<h1>🐄 KO-MATHA DAIRY FARM</h1>
+<p>Pure Milk, Healthy Life!</p>
+</header>
+
+<nav>
+<a href="#home">Home</a>
+<a href="#products">Products</a>
+<a href="#farm">Farm</a>
+<a href="#about">About Us</a>
+<a href="#contact">Contact</a>
+</nav>
+
+<div class="box" id="home">
+<h2>Welcome to Ko-Matha Dairy Farm</h2>
+<p>Fresh and quality dairy products delivered to your doorstep.</p>
+</div>
+
+<div class="box" id="products">
+<h2>Our Products</h2>
+<div class="product"><h3>🥛 Milk</h3><p>₹60 / litre</p><button onclick="order('Milk')">Order</button></div>
+<div class="product"><h3>Curd</h3><p>₹40 / pack</p><button onclick="order('Curd')">Order</button></div>
+<div class="product"><h3>Butter</h3><p>₹80 / pack</p><button onclick="order('Butter')">Order</button></div>
+<div class="product"><h3>Ghee</h3><p>₹250 / bottle</p><button onclick="order('Ghee')">Order</button></div>
+<div class="product"><h3>Cova Sweet</h3><p>₹100 / pack</p><button onclick="order('Cova Sweet')">Order</button></div>
+</div>
+
+<div class="box" id="farm">
+<h2>Our Farm</h2>
+<p>We focus on quality dairy production, healthy cattle care
+and hygienic milk processing using modern technology.</p>
+</div>
+
+<div class="box" id="about">
+<h2>About Us</h2>
+<p>Ko-Matha Dairy Farm aims to provide fresh dairy products
+with quality, care and customer satisfaction.</p>
+</div>
+
+<div class="box" id="contact">
+<h2>Contact Us</h2>
+<input id="name" placeholder="Your Name"><br>
+<input id="email" placeholder="Email"><br>
+<textarea id="message" placeholder="Your Message"></textarea><br>
+<button onclick="send()">Send Message</button>
+<h3 id="result"></h3>
+</div>
+
+<footer style="color:white;padding:15px">
+© 2026 Ko-Matha Dairy Farm | Freshness Delivered
+</footer>
+
+<script>
+let selected="";
+function order(p){
+selected=p;
+document.getElementById("result").innerText=
+"Selected Product: "+p+". Please contact us to complete your order.";
+document.getElementById("contact").scrollIntoView();
+}
+function send(){
+let n=document.getElementById("name").value;
+let e=document.getElementById("email").value;
+if(!n||!e||!document.getElementById("message").value){
+alert("Please fill all details");return;
+}
+document.getElementById("result").innerText=
+"Thank you "+n+"! Your enquiry has been received.";
+}
+</script>
+
+</body>
+</html>
